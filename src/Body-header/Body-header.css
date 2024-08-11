@@ -1,0 +1,343 @@
+.title {
+    text-align: center;
+    font-size: 4.5rem;
+    font-weight: 650;
+    line-height: 94px;
+    letter-spacing: -3px;
+    padding-top: 10px;
+  }
+  
+  .parent {
+    height: 650px;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex: 1;
+    transform: translate(-13%, 0);
+  }
+  
+  .box {
+    width: max-content;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s linear;
+    border: 1px solid #ddd;
+  }
+  
+  .box1 {
+    width: 50vw;
+    height: 400px;
+    border-radius: 20px;
+    transition: all 0.3s linear;
+    border: 1px solid #ddd;
+    flex-shrink: 0;
+    overflow: hidden;
+    background-color: #FDE293;
+  }
+  
+  .box1 .backgroundImgScroll{
+    width: 100%;
+  }
+  .box-content{
+    display: flex;
+    gap: 20px;
+    padding: 50px;
+  }
+
+  .box-content .box-heading{
+    width: 25%;
+  }
+
+  .box-content .box-paragraph{
+    width: 55%;
+    font-size: 16px;
+    color: #5f6368;
+  }
+
+  .fast {
+    margin: 50px 70px;
+    display: flex;
+    gap: 30px;
+    height: 700px;
+  }
+  
+  .fast::-webkit-scrollbar{
+    display: none;
+  }
+  
+  button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(237, 236, 236);
+    border: none;
+  }
+  .rectangle>img {
+    width: 100%;
+  }
+
+  .Tabs-navigate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0px 10px 0px;
+  }
+
+  .Tabs{
+    display: flex;
+    gap: 40px;
+    border-radius: 100px;
+    padding: 15px;
+    box-shadow: 0 2px 4px 0 rgba(255, 255, 255, 0.4), 0 2px 10px 0 rgba(133, 133, 133, 0.19);
+}
+
+  .Tabs a{
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+  }
+
+  .Tabs a:hover{
+    background-color: #f3f3f3b5;
+  }
+  .Tabs div a{
+    text-decoration: none;
+    color: #5f6368;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    display: flex;
+    gap: 40px;
+    border-radius: 100px;
+    padding: 15px;
+    /* box-shadow: 0 2px 8px 0 rgb(237, 237, 237), 0 0px 0px 0 rgba(0, 0, 0, 0.19); */
+    box-shadow: 0 4px 8px 0 rgba(206, 206, 206, 0.571), 0 6px 20px 0 rgba(255, 254, 254, 0.434);
+    margin-left: 32.7%;
+  }
+
+  .downloadLink{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .downloadLink a{
+    text-decoration: none;
+  }
+  
+
+  .update{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 94px;
+    letter-spacing: -2px;
+    padding-top: 10px;
+  }
+
+  .updateAnimation{    /* make changes here*/
+    font-weight: 500;
+    background-color: #E8F0FE;
+    color: #397DD9;
+    padding: 0px 25px 10px 25px;
+    border-radius: 45px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .updateAnimation span{
+    position: relative;
+    bottom: -200px;
+    opacity: 0;
+    animation-name: appear;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .updateAnimation span:nth-of-type(2){
+    animation-delay: 0.2s;
+  }
+
+  .updateAnimation span:nth-of-type(3){
+    animation-delay: 0.4s;
+  }
+
+  .updateAnimation span:nth-of-type(4){
+    animation-delay: 0.6s;
+  }
+
+  .updateAnimation span:nth-of-type(5){
+    animation-delay: 0.8s;
+  }
+
+  .updateAnimation span:nth-of-type(6){
+    animation-delay: 1s;
+  }
+
+  @keyframes appear {
+
+    0%{
+      opacity: 0;
+      bottom: -200px;
+    }
+
+    70%{
+      opacity: 1;
+      bottom: 15px;
+    }
+
+    85%{
+      opacity: 1;
+      bottom: -10px;
+    }
+    100%{
+      opacity: 1;
+      bottom: 0px;
+    }
+  }
+  .cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .cards .updateCards-1, .updateCards-2{
+    width: 600px;
+    border-radius: 30px;
+  }
+
+  .updateCards-1{
+    background-color: #e8f0fe;
+  } 
+  .dataPart{
+    padding: 52px;
+  }
+  .updateCards-2{
+    background-color: #fef7e0;
+    padding: 65px;
+  }
+
+  .headingFont-1{
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .headingFont-2{
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  .imageBackground img{
+    width: 100%;
+  }
+
+  .updateChromeLogo{
+    width: 37%;
+    display: block;
+    margin-left: 290px;
+    margin-top: 25.5%;
+  }
+
+
+  .fast-heading{
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 650;
+    line-height: 90px;
+    letter-spacing: 1px;
+    padding-top: 10px;
+  }
+
+  .fastAnimation{
+    background-color: #CEEAD6;
+    color: #3C9557;
+    padding: 0px 25px 10px 25px;
+    border-radius: 45px;
+    font-weight: 500;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .fastAnimation span{
+    position: relative;
+    bottom: -200px;
+    opacity: 0;
+    animation-name: appearFast;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+  }
+
+  .fastAnimation span:nth-of-type(2){
+    animation-delay: 0.2s;
+  }
+
+  .fastAnimation span:nth-of-type(3){
+    animation-delay: 0.4s;
+  }
+
+  .fastAnimation span:nth-of-type(4){
+    animation-delay: 0.6s;
+  }
+
+  .fastAnimation span:nth-of-type(5){
+    animation-delay: 0.8s;
+  }
+
+  .fastAnimation span:nth-of-type(6){
+    animation-delay: 1s;
+  }
+
+  @keyframes appearFast {
+
+    0%{
+      opacity: 0;
+      bottom: -200px;
+    }
+
+    70%{
+      opacity: 1;
+      bottom: 15px;
+    }
+
+    85%{
+      opacity: 1;
+      bottom: -10px;
+    }
+    100%{
+      opacity: 1;
+      bottom: 0px;
+    }
+  }
+
+  .backgroundImgScroll-3{
+    width: 105%;
+  }

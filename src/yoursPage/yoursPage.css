@@ -1,0 +1,196 @@
+/* .yours-container {
+  border: 1px solid black;
+}
+
+.yours-page {
+  border: 1px solid black;
+} */
+
+.yours-heading {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 650;
+  line-height: 90px;
+  letter-spacing: -1px;
+  padding-top: 10px;
+}
+
+.yoursAnimation {
+  background-color: #FCE8E6;
+  color: #EA4335;
+  padding: 0px 25px 10px 25px;
+  border-radius: 45px;
+  font-weight: 500;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.yoursAnimation span{
+  position: relative;
+  bottom: -200px;
+  opacity: 0;
+  animation-name: appearYours;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.yoursAnimation span:nth-of-type(2){
+  animation-delay: 0.2s;
+}
+
+.yoursAnimation span:nth-of-type(3){
+  animation-delay: 0.4s;
+}
+
+.yoursAnimation span:nth-of-type(4){
+  animation-delay: 0.6s;
+}
+
+.yoursAnimation span:nth-of-type(5){
+  animation-delay: 0.8s;
+}
+
+.yoursAnimation span:nth-of-type(6){
+  animation-delay: 1s;
+}
+
+@keyframes appearYours {
+
+  0%{
+    opacity: 0;
+    bottom: -200px;
+  }
+
+  70%{
+    opacity: 1;
+    bottom: 15px;
+  }
+
+  85%{
+    opacity: 1;
+    bottom: -10px;
+  }
+  100%{
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+
+.yoursPage-bg {
+  height: 650px;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.yoursPage-container {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex: 1;
+  transform: translate(-13%, 0);
+}
+
+.yoursPagecards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+}
+
+.yoursPageCards-1,
+.yoursPageCards-2,
+.yoursPageCards-4 {
+  width: 600px;
+  height: 600px;
+}
+
+.yoursPageCards-1 img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 25px;
+}
+  
+.yoursPageCards-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.yoursPageCards-2 button.accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 15px;
+  transition: 0.4s;
+  background-color: white;
+}
+
+
+.yoursPageCards-2 .panel {
+    padding: 0 18px;
+    max-height: 0; 
+    overflow: hidden;
+    background-color: white;
+    transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.4s ease; 
+    opacity: 0;
+    width: 350px;
+    font-size: 17px;
+}
+
+.yoursPageCards-2 .panel.active {
+  max-height: 100px; 
+  padding: 10px 18px; 
+  opacity: 1; 
+}
+
+.yoursPageCards-2 .signIn{
+    width: 40%;
+    border-radius: 30px;
+    background-color: #E8F0FE;
+    color: #3A7DD9;
+
+}
+
+.yoursPageCards-3 {
+  width: 500px;
+  padding: 20px;
+}
+
+.yoursPageCards-3 h3 {
+  font-size: 45px;
+}
+
+.yoursPageCards-3 p {
+  font-size: 19px;
+  color: #5f6368;
+}
+
+.yoursPageCards-3 button {
+  width: 45%;
+  background-color: #e8f0fe;
+  color: rgb(2, 2, 211);
+  border-radius: 25px;
+  padding: 0px 15px 0px 15px;
+}
+
+.yoursPageCards-4 {
+  width: 670px;
+  height: fit-content;
+}
+
+.yoursPageCards-4 img {
+  width: 100%;
+}
