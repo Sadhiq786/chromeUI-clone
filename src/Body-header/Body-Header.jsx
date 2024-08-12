@@ -6,16 +6,24 @@ import { PiClockClockwiseFill } from "react-icons/pi";
 import { MdOutlineSpeed } from "react-icons/md";
 import backgroundImgScroll from "../images/scroll-image.jpg"
 import backgroundImgScroll_3 from "../images/scroll-image3.jpg";
+import { TbShieldSearch } from "react-icons/tb";
+import { AiFillFormatPainter } from "react-icons/ai";
 
 const BodyContent = () => {
   const prevScrollTop = useRef(0);
   const [isSticky, setIsSticky] = useState(false);
-
   const [fastMove, setFastMove] = useState({
     x: 0,
     overflow: "hidden",
     scale: 1.7,
   });
+
+
+  const words = ["fast", "safe", "yours"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentLetterIndex, setCurrentLetterIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(true);
+
 
   const [translate, setTranslate] = useState({
     box_1: {
@@ -50,6 +58,46 @@ const BodyContent = () => {
     },
   });
 
+
+
+  useEffect(() => {
+    if (isAnimating && currentLetterIndex < words[currentWordIndex].length) {
+      const timeout = setTimeout(() => {
+        setCurrentLetterIndex((prev) => prev + 1);
+      }, 300); // Adjust delay for each letter here
+      return () => clearTimeout(timeout);
+    } else if (isAnimating && currentLetterIndex === words[currentWordIndex].length) {
+      const timeout = setTimeout(() => {
+        setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        setCurrentLetterIndex(0);
+      }, 4000); // Adjust delay between words here
+      return () => clearTimeout(timeout);
+    }
+  }, [currentLetterIndex, currentWordIndex, isAnimating, words]);
+
+  useEffect(() => {
+    const totalDuration = words.reduce(
+      (acc, word) => acc + word.length * 300 + 1000,
+      0
+    );
+    const stopAnimation = setTimeout(() => {
+      setIsAnimating(false);
+    }, totalDuration);
+
+    return () => clearTimeout(stopAnimation);
+  }, [words]);
+
+  const renderWord = () => {
+    return words[currentWordIndex]
+      .split("")
+      .slice(0, currentLetterIndex)
+      .map((letter, index) => (
+        <span key={index} className="letter">
+          {letter}
+        </span>
+      ));
+  };
+  
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -201,16 +249,39 @@ const BodyContent = () => {
 
   return (
     <>
-      <div className="title">
-        <div>
-          <img src={navsection[0].chromeLogo} alt="chrome logo" width={65} />
-        </div>
-        <div>
-          <p>
-            The browser <br /> built to be yours
-          </p>
-        </div>
-      </div>
+    <div className="title">
+    <div>
+      <img
+        src="https://www.google.com/chrome/static/images/chrome-logo-m100.svg"
+        alt="chrome logo"
+        width={65}
+      />
+    </div>
+    <div>
+      <p>
+        The browser <br /> built to be <span className={`animatedWord ${isAnimating ? "" : "hidden"}`}>
+          {currentWordIndex === 0 && (
+            <span className="fastAnimation">
+              <MdOutlineSpeed />
+              {renderWord()}
+            </span>
+          )}
+          {currentWordIndex === 1 && (
+            <span className="safeAnimation">
+              <TbShieldSearch />
+              {renderWord()}
+            </span>
+          )}
+          {currentWordIndex === 2 && (
+            <span className="yoursAnimation">
+              <AiFillFormatPainter />
+              {renderWord()}
+            </span>
+          )}
+        </span>
+      </p>
+    </div>
+  </div>
 
       <div className="Tabs-navigate">
         <div className={`Tabs ${isSticky ? "sticky" : ""}`}>
